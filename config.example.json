@@ -1,0 +1,11 @@
+{
+  "_comment": "Copy this file to config.json and fill it in. config.json is gitignored, so nothing here reaches GitHub. Run `python3 maptap.py --list-chats` to find your chat_id.",
+
+  "chat_id": "chat000000000000000000",
+
+  "names": {
+    "me": "YourName",
+    "+15551234567": "Friend",
+    "someone@icloud.com": "AnotherFriend"
+  }
+}

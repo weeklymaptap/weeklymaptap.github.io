@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>MapTap — Weekly Standings</title>
+<style>
+  :root {
+    --ink:        #16130f;
+    --ink-soft:   #6b6155;
+    --ink-faint:  #a99e8f;
+    --paper:      #ffffff;
+    --card:       #faf8f4;
+    --rule:       #e7e2d8;
+    --gold:       #b8860b;
+    --silver:     #8c8c94;
+    --bronze:     #9a6134;
+    --shadow:     0 1px 2px rgba(40,30,15,.04);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 16px/1.5 ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding: clamp(1.5rem, 5vw, 4rem) 1.25rem 4rem;
+  }
+
+  .wrap { max-width: 46rem; margin: 0 auto; }
+
+  /* ---- masthead ---- */
+
+  header { margin-bottom: 2.5rem; }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(1.75rem, 5.5vw, 2.5rem);
+    line-height: 1.1;
+    letter-spacing: -.03em;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .week {
+    margin: .85rem 0 0;
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+  }
+
+  .rule {
+    height: 3px;
+    margin: 1.5rem 0 0;
+    background: var(--ink);
+    border-radius: 2px;
+  }
+
+  /* ---- rows ---- */
+
+  ol.board { list-style: none; margin: 0; padding: 0; }
+
+  li.row {
+    display: grid;
+    grid-template-columns: 2.6rem 1fr auto;
+    align-items: center;
+    gap: 0 1rem;
+    padding: 1.15rem .25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .rank {
+    font-variant-numeric: tabular-nums;
+    font-size: 1.15rem;
+    font-weight: 650;
+    color: var(--ink-faint);
+    text-align: right;
+  }
+
+  .row.medal .rank { font-size: 1.6rem; line-height: 1; }
+  .row[data-rank="1"] .rank { color: var(--gold); }
+  .row[data-rank="2"] .rank { color: var(--silver); }
+  .row[data-rank="3"] .rank { color: var(--bronze); }
+
+  .name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    min-width: 0;
+  }
+
+  .row[data-rank="1"] .name { font-size: 1.45rem; }
+
+  .total {
+    grid-column: 3;
+    font-variant-numeric: tabular-nums;
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: -.03em;
+    text-align: right;
+  }
+
+  /* ---- daily strip ---- */
+
+  .days {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: .3rem;
+    margin-top: .8rem;
+    padding-left: 3.6rem;
+  }
+
+  /* On a white page a played day reads as the *filled* cell, so it gets the
+     tint and an empty day stays plain with a dashed edge. */
+  .day {
+    flex: 1 1 0;
+    min-width: 0;
+    border-radius: 5px;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    padding: .35rem .2rem .3rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+
+  .day.empty { background: transparent; box-shadow: none; border-style: dashed; }
+
+  .day .dow {
+    display: block;
+    font-size: .7rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--ink-soft);
+  }
+
+  .day .val {
+    display: block;
+    font-variant-numeric: tabular-nums;
+    font-size: .85rem;
+    font-weight: 600;
+    margin-top: .1rem;
+  }
+
+  .day.empty .val { color: var(--ink-faint); font-weight: 400; }
+
+  /* ---- footer ---- */
+
+  footer {
+    margin-top: 2.5rem;
+    font-size: .8rem;
+    color: var(--ink-faint);
+  }
+
+  .state {
+    padding: 3rem 0;
+    text-align: center;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 30rem) {
+    li.row { grid-template-columns: 1.9rem 1fr auto; gap: 0 .7rem; }
+    .total { font-size: 1.5rem; }
+    .name, .row[data-rank="1"] .name { font-size: 1.1rem; }
+    .days { padding-left: 0; gap: .25rem; }
+    .day { padding-left: .1rem; padding-right: .1rem; }
+    .day .val { font-size: .75rem; }
+    /* "MON" clips in a ~32px cell at the full size, so ease off on small phones. */
+    .day .dow { font-size: .62rem; letter-spacing: .01em; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>MapTap Weekly Standings</h1>
+    <p class="week" id="week">Loading…</p>
+    <div class="rule"></div>
+  </header>
+
+  <ol class="board" id="board"></ol>
+  <p class="state" id="state" hidden></p>
+
+  <footer>
+    <span id="updated"></span>
+  </footer>
+
+</div>
+
+<script>
+const MEDALS = { 1: "\u{1F947}", 2: "\u{1F948}", 3: "\u{1F949}" };
+const DOW = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+const board = document.getElementById("board");
+const state = document.getElementById("state");
+
+function el(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text !== undefined) node.textContent = text;
+  return node;
+}
+
+function showState(message) {
+  state.textContent = message;
+  state.hidden = false;
+}
+
+function plural(n, word) {
+  return n + " " + word + (n === 1 ? "" : "s");
+}
+
+function relativeTime(iso) {
+  const then = new Date(iso);
+  if (isNaN(then)) return "";
+  const mins = Math.round((Date.now() - then) / 60000);
+  if (mins < 2) return "just now";
+  if (mins < 60) return plural(mins, "minute") + " ago";
+  const hours = Math.round(mins / 60);
+  if (hours < 24) return plural(hours, "hour") + " ago";
+  return plural(Math.round(hours / 24), "day") + " ago";
+}
+
+function renderRow(player, weekDays) {
+  const row = el("li", "row");
+  row.dataset.rank = player.rank;
+  if (player.rank <= 3) row.classList.add("medal");
+
+  row.append(
+    el("div", "rank", MEDALS[player.rank] || player.rank),
+    el("div", "name", player.name),
+    el("div", "total", player.total.toLocaleString())
+  );
+
+  const scoreByDate = {};
+  for (const day of player.days) scoreByDate[day.date] = day;
+
+  const strip = el("div", "days");
+  weekDays.forEach(function (date, i) {
+    const entry = scoreByDate[date];
+    const cell = el("div", "day" + (entry ? "" : " empty"));
+    cell.append(el("span", "dow", DOW[i]));
+    cell.append(el("span", "val", entry ? entry.score.toLocaleString() : "–"));
+    if (entry) {
+      cell.title = date + " · " + entry.subs
+        .map(function (s) { return s.value + s.emoji; })
+        .join("  ");
+    }
+    strip.append(cell);
+  });
+  row.append(strip);
+
+  return row;
+}
+
+fetch("data.json?t=" + Date.now())
+  .then(function (response) {
+    if (!response.ok) throw new Error("HTTP " + response.status);
+    return response.json();
+  })
+  .then(function (data) {
+    document.getElementById("week").textContent = data.week.label;
+    document.getElementById("updated").textContent =
+      "Updated " + relativeTime(data.generated_at);
+
+    if (!data.players.length) {
+      showState("No scores posted yet this week.");
+      return;
+    }
+    for (const player of data.players) {
+      board.append(renderRow(player, data.days));
+    }
+  })
+  .catch(function (error) {
+    document.getElementById("week").textContent = "";
+    showState("Couldn’t load the standings (" + error.message + ").");
+  });
+</script>
+</body>
+</html>

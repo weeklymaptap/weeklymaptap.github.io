@@ -1,0 +1,9 @@
+update.log
+README.md
+.DS_Store
+
+# Personal data: chat ID and phone-number-to-name map. Never commit this.
+config.json
+
+__pycache__/
+gg.maptap.leaderboard.plist
