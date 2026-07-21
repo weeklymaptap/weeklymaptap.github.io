@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T20:59:38-04:00",
+  "generated_at": "2026-07-20T21:02:43-04:00",
   "week": {
     "start": "2026-07-20",
     "end": "2026-07-26",
@@ -262,6 +262,47 @@
       "rank": 6
     },
     {
+      "name": "Emeline",
+      "total": 630,
+      "days_played": 1,
+      "best": 630,
+      "average": 630,
+      "days": [
+        {
+          "date": "2026-07-20",
+          "score": 630,
+          "subs": [
+            {
+              "emoji": "🎉",
+              "value": 89,
+              "label": ""
+            },
+            {
+              "emoji": "🎯",
+              "value": 98,
+              "label": "Accuracy"
+            },
+            {
+              "emoji": "🏅",
+              "value": 94,
+              "label": "Medal"
+            },
+            {
+              "emoji": "🫢",
+              "value": 66,
+              "label": ""
+            },
+            {
+              "emoji": "🥺",
+              "value": 19,
+              "label": ""
+            }
+          ]
+        }
+      ],
+      "rank": 7
+    },
+    {
       "name": "Tina",
       "total": 626,
       "days_played": 1,
@@ -300,8 +341,8 @@
           ]
         }
       ],
-      "rank": 7
+      "rank": 8
     }
   ],
-  "post_count": 7
+  "post_count": 8
 }
