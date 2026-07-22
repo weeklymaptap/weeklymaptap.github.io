@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T09:45:04-04:00",
+  "generated_at": "2026-07-22T11:18:05-04:00",
   "week": {
     "start": "2026-07-20",
     "end": "2026-07-26",
@@ -428,6 +428,109 @@
       "rank": 4
     },
     {
+      "name": "Marilyn",
+      "total": 2226,
+      "days_played": 3,
+      "best": 896,
+      "average": 742,
+      "days": [
+        {
+          "date": "2026-07-20",
+          "score": 749,
+          "subs": [
+            {
+              "emoji": "🎓",
+              "value": 88,
+              "label": ""
+            },
+            {
+              "emoji": "🌟",
+              "value": 84,
+              "label": ""
+            },
+            {
+              "emoji": "🏆",
+              "value": 95,
+              "label": "Trophy"
+            },
+            {
+              "emoji": "😁",
+              "value": 70,
+              "label": "Streak"
+            },
+            {
+              "emoji": "😑",
+              "value": 59,
+              "label": ""
+            }
+          ]
+        },
+        {
+          "date": "2026-07-21",
+          "score": 581,
+          "subs": [
+            {
+              "emoji": "🏅",
+              "value": 96,
+              "label": "Medal"
+            },
+            {
+              "emoji": "🫢",
+              "value": 63,
+              "label": ""
+            },
+            {
+              "emoji": "🏅",
+              "value": 97,
+              "label": "Medal"
+            },
+            {
+              "emoji": "🤫",
+              "value": 54,
+              "label": ""
+            },
+            {
+              "emoji": "🧊",
+              "value": 22,
+              "label": ""
+            }
+          ]
+        },
+        {
+          "date": "2026-07-22",
+          "score": 896,
+          "subs": [
+            {
+              "emoji": "🔥",
+              "value": 98,
+              "label": ""
+            },
+            {
+              "emoji": "🏆",
+              "value": 94,
+              "label": "Trophy"
+            },
+            {
+              "emoji": "🎉",
+              "value": 91,
+              "label": ""
+            },
+            {
+              "emoji": "🏆",
+              "value": 95,
+              "label": "Trophy"
+            },
+            {
+              "emoji": "👏",
+              "value": 79,
+              "label": ""
+            }
+          ]
+        }
+      ],
+      "rank": 5
+    },
+    {
       "name": "Tina",
       "total": 2220,
       "days_played": 3,
@@ -528,7 +631,7 @@
           ]
         }
       ],
-      "rank": 5
+      "rank": 6
     },
     {
       "name": "Emeline",
@@ -631,7 +734,7 @@
           ]
         }
       ],
-      "rank": 6
+      "rank": 7
     },
     {
       "name": "John",
@@ -703,80 +806,8 @@
           ]
         }
       ],
-      "rank": 7
-    },
-    {
-      "name": "Marilyn",
-      "total": 1330,
-      "days_played": 2,
-      "best": 749,
-      "average": 665,
-      "days": [
-        {
-          "date": "2026-07-20",
-          "score": 749,
-          "subs": [
-            {
-              "emoji": "🎓",
-              "value": 88,
-              "label": ""
-            },
-            {
-              "emoji": "🌟",
-              "value": 84,
-              "label": ""
-            },
-            {
-              "emoji": "🏆",
-              "value": 95,
-              "label": "Trophy"
-            },
-            {
-              "emoji": "😁",
-              "value": 70,
-              "label": "Streak"
-            },
-            {
-              "emoji": "😑",
-              "value": 59,
-              "label": ""
-            }
-          ]
-        },
-        {
-          "date": "2026-07-21",
-          "score": 581,
-          "subs": [
-            {
-              "emoji": "🏅",
-              "value": 96,
-              "label": "Medal"
-            },
-            {
-              "emoji": "🫢",
-              "value": 63,
-              "label": ""
-            },
-            {
-              "emoji": "🏅",
-              "value": 97,
-              "label": "Medal"
-            },
-            {
-              "emoji": "🤫",
-              "value": 54,
-              "label": ""
-            },
-            {
-              "emoji": "🧊",
-              "value": 22,
-              "label": ""
-            }
-          ]
-        }
-      ],
       "rank": 8
     }
   ],
-  "post_count": 23
+  "post_count": 24
 }
