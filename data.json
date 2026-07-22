@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T08:18:41-04:00",
+  "generated_at": "2026-07-22T08:25:41-04:00",
   "week": {
     "start": "2026-07-20",
     "end": "2026-07-26",
@@ -119,109 +119,6 @@
       "rank": 1
     },
     {
-      "name": "Drew",
-      "total": 2522,
-      "days_played": 3,
-      "best": 969,
-      "average": 841,
-      "days": [
-        {
-          "date": "2026-07-20",
-          "score": 670,
-          "subs": [
-            {
-              "emoji": "😁",
-              "value": 83,
-              "label": "Streak"
-            },
-            {
-              "emoji": "🎯",
-              "value": 98,
-              "label": "Accuracy"
-            },
-            {
-              "emoji": "🏆",
-              "value": 93,
-              "label": "Trophy"
-            },
-            {
-              "emoji": "🏅",
-              "value": 95,
-              "label": "Medal"
-            },
-            {
-              "emoji": "😭",
-              "value": 6,
-              "label": "Misses"
-            }
-          ]
-        },
-        {
-          "date": "2026-07-21",
-          "score": 883,
-          "subs": [
-            {
-              "emoji": "🔥",
-              "value": 97,
-              "label": ""
-            },
-            {
-              "emoji": "🔥",
-              "value": 97,
-              "label": ""
-            },
-            {
-              "emoji": "🏅",
-              "value": 94,
-              "label": "Medal"
-            },
-            {
-              "emoji": "😐",
-              "value": 69,
-              "label": ""
-            },
-            {
-              "emoji": "🎯",
-              "value": 98,
-              "label": "Accuracy"
-            }
-          ]
-        },
-        {
-          "date": "2026-07-22",
-          "score": 969,
-          "subs": [
-            {
-              "emoji": "🎯",
-              "value": 100,
-              "label": "Accuracy"
-            },
-            {
-              "emoji": "🔥",
-              "value": 99,
-              "label": ""
-            },
-            {
-              "emoji": "🎯",
-              "value": 100,
-              "label": "Accuracy"
-            },
-            {
-              "emoji": "🎯",
-              "value": 100,
-              "label": "Accuracy"
-            },
-            {
-              "emoji": "🎉",
-              "value": 90,
-              "label": ""
-            }
-          ]
-        }
-      ],
-      "rank": 2
-    },
-    {
       "name": "Adam",
       "total": 2496,
       "days_played": 3,
@@ -318,6 +215,109 @@
               "emoji": "🎉",
               "value": 90,
               "label": ""
+            }
+          ]
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "name": "Drew",
+      "total": 2355,
+      "days_played": 3,
+      "best": 883,
+      "average": 785,
+      "days": [
+        {
+          "date": "2026-07-20",
+          "score": 670,
+          "subs": [
+            {
+              "emoji": "😁",
+              "value": 83,
+              "label": "Streak"
+            },
+            {
+              "emoji": "🎯",
+              "value": 98,
+              "label": "Accuracy"
+            },
+            {
+              "emoji": "🏆",
+              "value": 93,
+              "label": "Trophy"
+            },
+            {
+              "emoji": "🏅",
+              "value": 95,
+              "label": "Medal"
+            },
+            {
+              "emoji": "😭",
+              "value": 6,
+              "label": "Misses"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-21",
+          "score": 883,
+          "subs": [
+            {
+              "emoji": "🔥",
+              "value": 97,
+              "label": ""
+            },
+            {
+              "emoji": "🔥",
+              "value": 97,
+              "label": ""
+            },
+            {
+              "emoji": "🏅",
+              "value": 94,
+              "label": "Medal"
+            },
+            {
+              "emoji": "😐",
+              "value": 69,
+              "label": ""
+            },
+            {
+              "emoji": "🎯",
+              "value": 98,
+              "label": "Accuracy"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-22",
+          "score": 802,
+          "subs": [
+            {
+              "emoji": "🏅",
+              "value": 94,
+              "label": "Medal"
+            },
+            {
+              "emoji": "🔥",
+              "value": 98,
+              "label": ""
+            },
+            {
+              "emoji": "🌟",
+              "value": 80,
+              "label": ""
+            },
+            {
+              "emoji": "😨",
+              "value": 51,
+              "label": ""
+            },
+            {
+              "emoji": "🎯",
+              "value": 99,
+              "label": "Accuracy"
             }
           ]
         }
@@ -716,5 +716,5 @@
       "rank": 8
     }
   ],
-  "post_count": 22
+  "post_count": 21
 }
