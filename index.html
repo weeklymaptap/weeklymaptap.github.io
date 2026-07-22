@@ -115,6 +115,7 @@
   /* On a white page a played day reads as the *filled* cell, so it gets the
      tint and an empty day stays plain with a dashed edge. */
   .day {
+    position: relative;
     flex: 1 1 0;
     min-width: 0;
     border-radius: 5px;
@@ -126,6 +127,23 @@
   }
 
   .day.empty { background: transparent; box-shadow: none; border-style: dashed; }
+
+  /* Top score for that day across everyone gets a gold frame and a crown. */
+  .day.win {
+    border-color: #e5b920;
+    box-shadow: 0 0 0 1px #e5b920, var(--shadow);
+  }
+
+  .day.win::after {
+    content: "\1F451";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: .15rem;
+    font-size: .95rem;
+    line-height: 1;
+  }
 
   .day .dow {
     display: block;
@@ -224,7 +242,22 @@ function relativeTime(iso) {
   return plural(Math.round(hours / 24), "day") + " ago";
 }
 
-function renderRow(player, weekDays) {
+function dailyWinners(players, weekDays) {
+  // date -> highest score anyone posted that day.
+  const best = {};
+  for (const date of weekDays) {
+    for (const player of players) {
+      for (const day of player.days) {
+        if (day.date === date && (best[date] === undefined || day.score > best[date])) {
+          best[date] = day.score;
+        }
+      }
+    }
+  }
+  return best;
+}
+
+function renderRow(player, weekDays, winners) {
   const row = el("li", "row");
   row.dataset.rank = player.rank;
   if (player.rank <= 3) row.classList.add("medal");
@@ -241,7 +274,8 @@ function renderRow(player, weekDays) {
   const strip = el("div", "days");
   weekDays.forEach(function (date, i) {
     const entry = scoreByDate[date];
-    const cell = el("div", "day" + (entry ? "" : " empty"));
+    const won = entry && winners[date] !== undefined && entry.score === winners[date];
+    const cell = el("div", "day" + (entry ? "" : " empty") + (won ? " win" : ""));
     cell.append(el("span", "dow", DOW[i]));
     cell.append(el("span", "val", entry ? entry.score.toLocaleString() : "–"));
     if (entry) {
@@ -270,8 +304,9 @@ fetch("data.json?t=" + Date.now())
       showState("No scores posted yet this week.");
       return;
     }
+    const winners = dailyWinners(data.players, data.days);
     for (const player of data.players) {
-      board.append(renderRow(player, data.days));
+      board.append(renderRow(player, data.days, winners));
     }
   })
   .catch(function (error) {

@@ -67,7 +67,9 @@ for _i, _m in enumerate(
     MONTHS[_m[:3]] = _i
 
 RE_HEADER = re.compile(r"maptap\.gg\s+([A-Za-z]{3,9})\.?\s+(\d{1,2})", re.I)
-RE_FINAL = re.compile(r"final\s*score\s*[:\-]?\s*([\d,]+)", re.I)
+# The score line is usually "Final score: 670" but some people just write
+# "Score: 983", so the "final" is optional.
+RE_FINAL = re.compile(r"(?:final\s*)?score\s*[:\-]?\s*([\d,]+)", re.I)
 RE_SUB = re.compile(r"(\d{1,4})\s*([^\s\d]+)")
 
 
@@ -285,29 +287,33 @@ def parse_post(text, sent_at):
         return None
 
     header = RE_HEADER.search(text)
-    if not header and "maptap" not in text.lower():
-        return None
-
     month = header.group(1) if header else None
     day = int(header.group(2)) if header else None
     post_day = resolve_post_date(month, day, sent_at)
 
-    # Sub-scores live on their own line: "83<emoji> 98<emoji> ...". Skip the
-    # "Final score: 670" line so its number never counts as a sub-score.
+    # Pull out the emoji sub-scores ("83😁 98🎯 ..."). Blank out the header and
+    # the score span first so their numbers can't be read as sub-scores, then
+    # scan the whole message - some people cram everything onto one line
+    # ("99🎯99🎯 ... Final Score: 983"), so we can't rely on a dedicated line.
+    scan = RE_HEADER.sub(" ", RE_FINAL.sub(" ", text))
     subs = []
-    for line in text.splitlines():
-        if RE_FINAL.search(line) or RE_HEADER.search(line):
+    for value, emoji in RE_SUB.findall(scan):
+        emoji = emoji.strip()
+        # Keep only real emoji, not stray number+word tokens ("2 chats").
+        if not any(ord(ch) >= 0x2000 for ch in emoji):
             continue
-        found = RE_SUB.findall(line)
-        if len(found) >= 2:
-            for value, emoji in found:
-                emoji = emoji.strip()
-                subs.append({
-                    "emoji": emoji,
-                    "value": int(value),
-                    "label": EMOJI_LABELS.get(emoji, ""),
-                })
-            break
+        subs.append({
+            "emoji": emoji,
+            "value": int(value),
+            "label": EMOJI_LABELS.get(emoji, ""),
+        })
+
+    # A score line alone is too weak (someone could just type "score: 5"), so
+    # require a MapTap fingerprint: the header/word, or a run of emoji
+    # sub-scores that only a real post would have.
+    is_maptap = header is not None or "maptap" in text.lower()
+    if not is_maptap and len(subs) < 3:
+        return None
 
     return {"date": post_day, "score": score, "subs": subs}
 
@@ -405,6 +411,10 @@ def fetch_messages(con, since_day):
                OR c.display_name = :chat
                OR CAST(c.ROWID AS TEXT) = :chat)
           AND m.date >= :since
+          -- Skip tapbacks (loved/liked/etc). Reacting to someone else's score
+          -- creates a message row whose text quotes their post, which would
+          -- otherwise be parsed as if you had posted that score yourself.
+          AND (m.associated_message_type = 0 OR m.associated_message_type IS NULL)
         ORDER BY m.date ASC
         """,
         # Seconds-era rows are numerically far below nanosecond-era rows, so a
