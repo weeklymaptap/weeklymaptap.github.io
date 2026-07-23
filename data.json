@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T10:10:19-04:00",
+  "generated_at": "2026-07-23T10:44:42-04:00",
   "week": {
     "start": "2026-07-20",
     "end": "2026-07-26",
@@ -686,6 +686,140 @@
       "rank": 5
     },
     {
+      "name": "Emeline",
+      "total": 2922,
+      "days_played": 4,
+      "best": 924,
+      "average": 730,
+      "days": [
+        {
+          "date": "2026-07-20",
+          "score": 630,
+          "subs": [
+            {
+              "emoji": "🎉",
+              "value": 89,
+              "label": ""
+            },
+            {
+              "emoji": "🎯",
+              "value": 98,
+              "label": "Accuracy"
+            },
+            {
+              "emoji": "🏅",
+              "value": 94,
+              "label": "Medal"
+            },
+            {
+              "emoji": "🫢",
+              "value": 66,
+              "label": ""
+            },
+            {
+              "emoji": "🥺",
+              "value": 19,
+              "label": ""
+            }
+          ]
+        },
+        {
+          "date": "2026-07-21",
+          "score": 596,
+          "subs": [
+            {
+              "emoji": "🎓",
+              "value": 85,
+              "label": ""
+            },
+            {
+              "emoji": "🏅",
+              "value": 95,
+              "label": "Medal"
+            },
+            {
+              "emoji": "🫣",
+              "value": 61,
+              "label": ""
+            },
+            {
+              "emoji": "🙂",
+              "value": 75,
+              "label": ""
+            },
+            {
+              "emoji": "😒",
+              "value": 23,
+              "label": ""
+            }
+          ]
+        },
+        {
+          "date": "2026-07-22",
+          "score": 924,
+          "subs": [
+            {
+              "emoji": "🏅",
+              "value": 95,
+              "label": "Medal"
+            },
+            {
+              "emoji": "🎯",
+              "value": 100,
+              "label": "Accuracy"
+            },
+            {
+              "emoji": "🏆",
+              "value": 93,
+              "label": "Trophy"
+            },
+            {
+              "emoji": "👑",
+              "value": 90,
+              "label": ""
+            },
+            {
+              "emoji": "👑",
+              "value": 91,
+              "label": ""
+            }
+          ]
+        },
+        {
+          "date": "2026-07-23",
+          "score": 772,
+          "subs": [
+            {
+              "emoji": "🔥",
+              "value": 97,
+              "label": ""
+            },
+            {
+              "emoji": "🌟",
+              "value": 80,
+              "label": ""
+            },
+            {
+              "emoji": "🙃",
+              "value": 68,
+              "label": ""
+            },
+            {
+              "emoji": "🌞",
+              "value": 78,
+              "label": ""
+            },
+            {
+              "emoji": "🙂",
+              "value": 75,
+              "label": ""
+            }
+          ]
+        }
+      ],
+      "rank": 6
+    },
+    {
       "name": "John",
       "total": 2517,
       "days_played": 3,
@@ -786,7 +920,7 @@
           ]
         }
       ],
-      "rank": 6
+      "rank": 7
     },
     {
       "name": "Marilyn",
@@ -889,111 +1023,8 @@
           ]
         }
       ],
-      "rank": 7
-    },
-    {
-      "name": "Emeline",
-      "total": 2150,
-      "days_played": 3,
-      "best": 924,
-      "average": 717,
-      "days": [
-        {
-          "date": "2026-07-20",
-          "score": 630,
-          "subs": [
-            {
-              "emoji": "🎉",
-              "value": 89,
-              "label": ""
-            },
-            {
-              "emoji": "🎯",
-              "value": 98,
-              "label": "Accuracy"
-            },
-            {
-              "emoji": "🏅",
-              "value": 94,
-              "label": "Medal"
-            },
-            {
-              "emoji": "🫢",
-              "value": 66,
-              "label": ""
-            },
-            {
-              "emoji": "🥺",
-              "value": 19,
-              "label": ""
-            }
-          ]
-        },
-        {
-          "date": "2026-07-21",
-          "score": 596,
-          "subs": [
-            {
-              "emoji": "🎓",
-              "value": 85,
-              "label": ""
-            },
-            {
-              "emoji": "🏅",
-              "value": 95,
-              "label": "Medal"
-            },
-            {
-              "emoji": "🫣",
-              "value": 61,
-              "label": ""
-            },
-            {
-              "emoji": "🙂",
-              "value": 75,
-              "label": ""
-            },
-            {
-              "emoji": "😒",
-              "value": 23,
-              "label": ""
-            }
-          ]
-        },
-        {
-          "date": "2026-07-22",
-          "score": 924,
-          "subs": [
-            {
-              "emoji": "🏅",
-              "value": 95,
-              "label": "Medal"
-            },
-            {
-              "emoji": "🎯",
-              "value": 100,
-              "label": "Accuracy"
-            },
-            {
-              "emoji": "🏆",
-              "value": 93,
-              "label": "Trophy"
-            },
-            {
-              "emoji": "👑",
-              "value": 90,
-              "label": ""
-            },
-            {
-              "emoji": "👑",
-              "value": 91,
-              "label": ""
-            }
-          ]
-        }
-      ],
       "rank": 8
     }
   ],
-  "post_count": 32
+  "post_count": 33
 }
