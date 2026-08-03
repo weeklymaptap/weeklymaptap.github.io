@@ -21,7 +21,8 @@ import os
 import re
 import sqlite3
 import sys
-from datetime import datetime, date, timedelta
+from datetime import datetime, date, timedelta, timezone
+from zoneinfo import ZoneInfo
 
 # ---------------------------------------------------------------------------
 # CONFIG
@@ -54,6 +55,11 @@ CONFIG_PATH = os.path.join(HERE, "config.json")
 
 # Apple's epoch is 2001-01-01 UTC.
 APPLE_EPOCH_OFFSET = 978307200
+
+# The chat is an Eastern-time crowd and the daily puzzle rolls over on Eastern
+# days, so everything - the day a post counts for, the Mon-Sun week, "today" -
+# is computed in Eastern regardless of what timezone this machine is set to.
+EASTERN = ZoneInfo("America/New_York")
 
 MONTHS = {}
 for _i, _m in enumerate(
@@ -156,18 +162,23 @@ def message_text(text_col, body_col):
 # ---------------------------------------------------------------------------
 
 def apple_to_datetime(raw):
-    """Convert a message.date value to a local datetime.
+    """Convert a message.date value to an Eastern-time datetime.
 
     Ventura-era rows store nanoseconds since the Apple epoch; older rows store
-    seconds. Anything above ~1e11 must be nanoseconds.
+    seconds. Anything above ~1e11 must be nanoseconds. The stored instant is
+    UTC, so we read it as UTC and convert to Eastern - that way the wall-clock
+    day is the same one the sender saw, no matter this machine's timezone.
     """
     if raw is None:
         return None
     seconds = raw / 1e9 if raw > 1e11 else float(raw)
-    return datetime.fromtimestamp(seconds + APPLE_EPOCH_OFFSET)
+    utc = datetime.fromtimestamp(seconds + APPLE_EPOCH_OFFSET, tz=timezone.utc)
+    return utc.astimezone(EASTERN)
 
 
 def datetime_to_apple_seconds(dt):
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=EASTERN)
     return int(dt.timestamp()) - APPLE_EPOCH_OFFSET
 
 
@@ -397,7 +408,7 @@ def list_chats(con):
 def fetch_messages(con, since_day):
     """All messages in the configured chat sent on/after `since_day`."""
     lower_bound = datetime_to_apple_seconds(
-        datetime.combine(since_day, datetime.min.time())
+        datetime.combine(since_day, datetime.min.time(), tzinfo=EASTERN)
     )
 
     rows = con.execute(
@@ -514,7 +525,7 @@ def build(con, target_day, verbose=False):
         player["rank"] = rank
 
     return {
-        "generated_at": datetime.now().astimezone().isoformat(timespec="seconds"),
+        "generated_at": datetime.now(EASTERN).isoformat(timespec="seconds"),
         "week": {
             "start": start.isoformat(),
             "end": end.isoformat(),
@@ -582,7 +593,7 @@ def main():
         except ValueError:
             die("--week expects YYYY-MM-DD, got %r" % args.week)
     else:
-        target = date.today()
+        target = datetime.now(EASTERN).date()
 
     if args.show:
         print("Parsed posts:")
