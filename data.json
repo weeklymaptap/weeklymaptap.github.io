@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T13:42:37-04:00",
+  "generated_at": "2026-08-03T14:33:50-04:00",
   "week": {
     "start": "2026-08-03",
     "end": "2026-08-09",
@@ -250,7 +250,48 @@
         }
       ],
       "rank": 6
+    },
+    {
+      "name": "Emeline",
+      "total": 818,
+      "days_played": 1,
+      "best": 818,
+      "average": 818,
+      "days": [
+        {
+          "date": "2026-08-03",
+          "score": 818,
+          "subs": [
+            {
+              "emoji": "🏆",
+              "value": 93,
+              "label": "Trophy"
+            },
+            {
+              "emoji": "🏅",
+              "value": 95,
+              "label": "Medal"
+            },
+            {
+              "emoji": "🎓",
+              "value": 87,
+              "label": ""
+            },
+            {
+              "emoji": "👏",
+              "value": 79,
+              "label": ""
+            },
+            {
+              "emoji": "😂",
+              "value": 73,
+              "label": ""
+            }
+          ]
+        }
+      ],
+      "rank": 7
     }
   ],
-  "post_count": 6
+  "post_count": 7
 }
