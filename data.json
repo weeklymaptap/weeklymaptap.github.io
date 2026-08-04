@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T12:18:39-04:00",
+  "generated_at": "2026-08-04T18:02:03-04:00",
   "week": {
     "start": "2026-08-03",
     "end": "2026-08-09",
@@ -428,6 +428,78 @@
       "rank": 6
     },
     {
+      "name": "Marilyn",
+      "total": 1773,
+      "days_played": 2,
+      "best": 888,
+      "average": 886,
+      "days": [
+        {
+          "date": "2026-08-03",
+          "score": 888,
+          "subs": [
+            {
+              "emoji": "🏅",
+              "value": 97,
+              "label": "Medal"
+            },
+            {
+              "emoji": "🎯",
+              "value": 100,
+              "label": "Accuracy"
+            },
+            {
+              "emoji": "😁",
+              "value": 86,
+              "label": "Streak"
+            },
+            {
+              "emoji": "🎉",
+              "value": 89,
+              "label": ""
+            },
+            {
+              "emoji": "🌟",
+              "value": 84,
+              "label": ""
+            }
+          ]
+        },
+        {
+          "date": "2026-08-04",
+          "score": 885,
+          "subs": [
+            {
+              "emoji": "🔥",
+              "value": 98,
+              "label": ""
+            },
+            {
+              "emoji": "🎓",
+              "value": 87,
+              "label": ""
+            },
+            {
+              "emoji": "✨",
+              "value": 80,
+              "label": ""
+            },
+            {
+              "emoji": "👑",
+              "value": 93,
+              "label": ""
+            },
+            {
+              "emoji": "🎓",
+              "value": 87,
+              "label": ""
+            }
+          ]
+        }
+      ],
+      "rank": 7
+    },
+    {
       "name": "Emeline",
       "total": 1664,
       "days_played": 2,
@@ -497,49 +569,8 @@
           ]
         }
       ],
-      "rank": 7
-    },
-    {
-      "name": "Marilyn",
-      "total": 888,
-      "days_played": 1,
-      "best": 888,
-      "average": 888,
-      "days": [
-        {
-          "date": "2026-08-03",
-          "score": 888,
-          "subs": [
-            {
-              "emoji": "🏅",
-              "value": 97,
-              "label": "Medal"
-            },
-            {
-              "emoji": "🎯",
-              "value": 100,
-              "label": "Accuracy"
-            },
-            {
-              "emoji": "😁",
-              "value": 86,
-              "label": "Streak"
-            },
-            {
-              "emoji": "🎉",
-              "value": 89,
-              "label": ""
-            },
-            {
-              "emoji": "🌟",
-              "value": 84,
-              "label": ""
-            }
-          ]
-        }
-      ],
       "rank": 8
     }
   ],
-  "post_count": 15
+  "post_count": 16
 }
