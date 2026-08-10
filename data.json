@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T18:50:22-04:00",
+  "generated_at": "2026-08-10T19:53:22-04:00",
   "week": {
     "start": "2026-08-10",
     "end": "2026-08-16",
@@ -211,6 +211,47 @@
       "rank": 5
     },
     {
+      "name": "Tina",
+      "total": 877,
+      "days_played": 1,
+      "best": 877,
+      "average": 877,
+      "days": [
+        {
+          "date": "2026-08-10",
+          "score": 877,
+          "subs": [
+            {
+              "emoji": "🏆",
+              "value": 94,
+              "label": "Trophy"
+            },
+            {
+              "emoji": "🏅",
+              "value": 97,
+              "label": "Medal"
+            },
+            {
+              "emoji": "😁",
+              "value": 70,
+              "label": "Streak"
+            },
+            {
+              "emoji": "😁",
+              "value": 85,
+              "label": "Streak"
+            },
+            {
+              "emoji": "🏅",
+              "value": 97,
+              "label": "Medal"
+            }
+          ]
+        }
+      ],
+      "rank": 6
+    },
+    {
       "name": "Adam",
       "total": 824,
       "days_played": 1,
@@ -249,7 +290,7 @@
           ]
         }
       ],
-      "rank": 6
+      "rank": 7
     },
     {
       "name": "Marilyn",
@@ -290,8 +331,8 @@
           ]
         }
       ],
-      "rank": 7
+      "rank": 8
     }
   ],
-  "post_count": 7
+  "post_count": 8
 }
