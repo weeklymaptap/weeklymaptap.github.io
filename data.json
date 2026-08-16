@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T18:07:17-04:00",
+  "generated_at": "2026-08-16T18:56:29-04:00",
   "week": {
     "start": "2026-08-10",
     "end": "2026-08-16",
@@ -1309,10 +1309,10 @@
     },
     {
       "name": "John",
-      "total": 3497,
-      "days_played": 4,
-      "best": 947,
-      "average": 874,
+      "total": 4449,
+      "days_played": 5,
+      "best": 952,
+      "average": 890,
       "days": [
         {
           "date": "2026-08-10",
@@ -1437,6 +1437,37 @@
               "label": ""
             }
           ]
+        },
+        {
+          "date": "2026-08-16",
+          "score": 952,
+          "subs": [
+            {
+              "emoji": "👑",
+              "value": 92,
+              "label": ""
+            },
+            {
+              "emoji": "🔥",
+              "value": 98,
+              "label": ""
+            },
+            {
+              "emoji": "🏅",
+              "value": 96,
+              "label": "Medal"
+            },
+            {
+              "emoji": "🏆",
+              "value": 94,
+              "label": "Trophy"
+            },
+            {
+              "emoji": "🏅",
+              "value": 96,
+              "label": "Medal"
+            }
+          ]
         }
       ],
       "rank": 7
@@ -1514,5 +1545,5 @@
       "rank": 8
     }
   ],
-  "post_count": 50
+  "post_count": 51
 }
