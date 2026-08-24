@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T10:20:08-04:00",
+  "generated_at": "2026-08-24T13:36:15-04:00",
   "week": {
     "start": "2026-08-24",
     "end": "2026-08-30",
@@ -216,6 +216,83 @@
       "rank": 5
     },
     {
+      "name": "Lydia",
+      "total": 879,
+      "days_played": 1,
+      "best": 879,
+      "average": 879,
+      "days": [
+        {
+          "date": "2026-08-24",
+          "score": 879,
+          "subs": [
+            {
+              "emoji": "🎯",
+              "value": 100,
+              "label": "Accuracy"
+            },
+            {
+              "emoji": "🎯",
+              "value": 98,
+              "label": "Accuracy"
+            },
+            {
+              "emoji": "😁",
+              "value": 84,
+              "label": "Streak"
+            },
+            {
+              "emoji": "✨",
+              "value": 80,
+              "label": ""
+            },
+            {
+              "emoji": "👑",
+              "value": 91,
+              "label": ""
+            }
+          ]
+        }
+      ],
+      "rank": 6
+    },
+    {
+      "name": "Laura",
+      "total": 785,
+      "days_played": 1,
+      "best": 785,
+      "average": 785,
+      "days": [
+        {
+          "date": "2026-08-24",
+          "score": 785,
+          "subs": [
+            {
+              "emoji": "🇬🇧",
+              "value": 97,
+              "label": ""
+            },
+            {
+              "emoji": "🇺🇦",
+              "value": 100,
+              "label": ""
+            },
+            {
+              "emoji": "🇨🇩",
+              "value": 93,
+              "label": ""
+            },
+            {
+              "emoji": "🇺🇾",
+              "value": 68,
+              "label": ""
+            }
+          ]
+        }
+      ],
+      "rank": 7
+    },
+    {
       "name": "Tina",
       "total": 781,
       "days_played": 1,
@@ -249,8 +326,8 @@
           ]
         }
       ],
-      "rank": 6
+      "rank": 8
     }
   ],
-  "post_count": 6
+  "post_count": 8
 }
