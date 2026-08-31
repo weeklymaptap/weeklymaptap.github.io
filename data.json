@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T09:12:10-04:00",
+  "generated_at": "2026-08-31T13:01:24-04:00",
   "week": {
     "start": "2026-08-31",
     "end": "2026-09-06",
@@ -88,6 +88,88 @@
       "rank": 2
     },
     {
+      "name": "Emeline",
+      "total": 926,
+      "days_played": 1,
+      "best": 926,
+      "average": 926,
+      "days": [
+        {
+          "date": "2026-08-31",
+          "score": 926,
+          "subs": [
+            {
+              "emoji": "🎯",
+              "value": 100,
+              "label": "Accuracy"
+            },
+            {
+              "emoji": "🏅",
+              "value": 95,
+              "label": "Medal"
+            },
+            {
+              "emoji": "🔥",
+              "value": 97,
+              "label": ""
+            },
+            {
+              "emoji": "🏆",
+              "value": 93,
+              "label": "Trophy"
+            },
+            {
+              "emoji": "🎓",
+              "value": 86,
+              "label": ""
+            }
+          ]
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "name": "John",
+      "total": 915,
+      "days_played": 1,
+      "best": 915,
+      "average": 915,
+      "days": [
+        {
+          "date": "2026-08-31",
+          "score": 915,
+          "subs": [
+            {
+              "emoji": "🏆",
+              "value": 94,
+              "label": "Trophy"
+            },
+            {
+              "emoji": "🏅",
+              "value": 96,
+              "label": "Medal"
+            },
+            {
+              "emoji": "🏅",
+              "value": 97,
+              "label": "Medal"
+            },
+            {
+              "emoji": "😁",
+              "value": 86,
+              "label": "Streak"
+            },
+            {
+              "emoji": "🎉",
+              "value": 91,
+              "label": ""
+            }
+          ]
+        }
+      ],
+      "rank": 4
+    },
+    {
       "name": "Drew",
       "total": 911,
       "days_played": 1,
@@ -126,7 +208,7 @@
           ]
         }
       ],
-      "rank": 3
+      "rank": 5
     },
     {
       "name": "Adam",
@@ -167,7 +249,7 @@
           ]
         }
       ],
-      "rank": 4
+      "rank": 6
     },
     {
       "name": "Laura",
@@ -203,7 +285,7 @@
           ]
         }
       ],
-      "rank": 5
+      "rank": 7
     },
     {
       "name": "Marilyn",
@@ -244,8 +326,8 @@
           ]
         }
       ],
-      "rank": 6
+      "rank": 8
     }
   ],
-  "post_count": 6
+  "post_count": 8
 }
